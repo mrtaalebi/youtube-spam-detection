@@ -1,7 +1,7 @@
 # YouTube Spam Detection
 
 This code deletes spam comment on youtube videos based on two characteristics (currently)
-- If the author of the comment has a sexually explicit profile picture
+- If the author of the comment has a sexually explicit profile picture (credits: [nudenet](https://github.com/notAI-tech/NudeNet))
 - If the comment is a duplicate of someone else's comment who has commented it earlier
 
 ## API Key
