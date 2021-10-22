@@ -26,3 +26,4 @@ This code deletes spam comment on youtube videos based on two characteristics (c
 - You can either create a docker secret and put the api_key in it or pass it in the command below.
 - Run the code with `docker run -it mrtaalebi/youtube-spam-detection:latest video_id dry_run api_key`.
 
+[Docker Image](https://hub.docker.com/repository/docker/mrtaalebi/youtube-spam-detection)
