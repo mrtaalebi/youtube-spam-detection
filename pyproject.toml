@@ -1,0 +1,20 @@
+[tool.poetry]
+name = 'youtube_spam_detection'
+version = '0.1.0'
+description = 'deletes youtube spam comments'
+
+license = 'MIT'
+
+authors = [
+	'Mohamadreza Taalebi <the.doors.are.locked@gmail.com>'
+]
+
+readme = 'README.md'
+
+
+[tool.poetry.dependencies]
+python = '^3.9'
+toml = '^0.9'
+python-dotenv = "^0.19.0"
+google-api-python-client = "^2.27.0"
+NudeNet = "^2.0.9"
