@@ -5,7 +5,7 @@ This code deletes spam comment on youtube videos based on two characteristics (c
 - If the comment is a duplicate of someone else's comment who has commented it earlier
 
 ## API Key
-- Follow the instructions to create a google app in google developer console and get an API_KEY for that app. The google account you use for this process must be the same as the owner of the youtube channel in order to have to permissions to delete a comment.
+- Follow the [instructions](https://support.google.com/googleapi/answer/6158862?hl=en) to create a google app in google developer console and get an API_KEY for that app. The google account you use for this process must be the same as the owner of the youtube channel in order to have to permissions to delete a comment.
 
 ## Arguments
 - `video_id`: Part of the youtube video url between "v=" and "&" (if present)
