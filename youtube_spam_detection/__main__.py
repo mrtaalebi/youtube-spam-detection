@@ -60,7 +60,7 @@ def delete_spam_comments(comments_and_replies, video_id):
     comments_hashed = {}
     for comment in comments_and_replies:
         for reply in [comment['comment']] + comment['replies']:
-            sexaullity = get_sexually_eplicit_profile_image_probability(reply)
+            sexaullity = get_sexually_explicit_profile_image_probability(reply)
             if sexaullity > config.sexaullity_treshold:
                 delete_comment(reply['id'])
 
@@ -76,7 +76,6 @@ def delete_spam_comments(comments_and_replies, video_id):
 
     for comments_with_same_hash in comments_hashed.values():
         str_to_time = lambda s: datetime.strptime(s, '%Y-%m-%dT%H:%M:%SZ')
-        original_comment = comments_with_same_hash[0]
 
         comments_with_same_hash.sort(
             key=lambda c: str_to_time(c['updatedAt'])
@@ -97,7 +96,7 @@ def delete_comment(comment_id):
     ).execute()
 
 
-def get_sexually_eplicit_profile_image_probability(comment):
+def get_sexually_explicit_profile_image_probability(comment):
     save_path = save_comment_profile_image(comment)
     nudity = nude_classifier.classify(save_path)[save_path]
     os.remove(save_path)
