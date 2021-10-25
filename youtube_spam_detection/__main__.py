@@ -36,7 +36,7 @@ def video_comments(video_id):
 
         if 'nextPageToken' in video_response:
             video_response = youtube.commentThreads().list(
-                part='snippet,replies',
+                part='snippet,replies,id',
                 videoId=video_id,
                 pageToken=video_response['nextPageToken'],
             ).execute()
@@ -119,13 +119,13 @@ def get_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('video_id', type=str)
     parser.add_argument('dry_run', type=bool, default=True)
-    parser.add_argument('api_key', type=str, nargs='?', default="")
+    parser.add_argument('api_key', type=str, nargs='?', default=config.api_key)
     args = parser.parse_args()
 
     video_id = args.video_id
     dry_run = args.dry_run
-    api_key = args.api_key if args.api_key != "" else config.api_key
-    if api_key is None:
+    api_key = args.api_key
+    if not api_key:
         print('API_KEY is not specified. exiting.')
         exit(1)
 
